@@ -12,6 +12,27 @@ Este proyecto es el backend para la plataforma Soft Jobs, que permite a desarrol
    - Decodificar el token para obtener el email del usuario del payload.
    - Obtener y devolver el registro del usuario.
 
+## Cumplimiento de Requisitos
+1. **Registro de Usuarios**
+
+Ruta: POST /api/usuarios
+
+El servidor permite el registro de nuevos usuarios. Los datos se validan y la contraseña se encripta antes de almacenarse en la base de datos.
+2. **Inicio de Sesión**
+
+Ruta: POST /api/login
+
+El servidor permite a los usuarios iniciar sesión y devuelve un token JWT si las credenciales son correctas. El token contiene el email del usuario en el payload.
+3. **Obtener Datos del Usuario Autenticado**
+
+Ruta: GET /api/usuarios
+
+El servidor verifica la validez del token JWT, lo decodifica para obtener el email del usuario, y devuelve los datos del usuario si está autenticado correctamente.
+
+Middleware y Seguridad
+
+    Verificación de Credenciales: El middleware checkCredentials verifica la existencia de c
+
 ## Tecnologías Utilizadas
 
 - Node.js
@@ -38,26 +59,7 @@ CREATE TABLE usuarios (
 );
 SELECT * FROM usuarios;
 
-Cumplimiento de Requisitos
-1. Registro de Usuarios
-
-Ruta: POST /api/usuarios
-
-El servidor permite el registro de nuevos usuarios. Los datos se validan y la contraseña se encripta antes de almacenarse en la base de datos.
-2. Inicio de Sesión
-
-Ruta: POST /api/login
-
-El servidor permite a los usuarios iniciar sesión y devuelve un token JWT si las credenciales son correctas. El token contiene el email del usuario en el payload.
-3. Obtener Datos del Usuario Autenticado
-
-Ruta: GET /api/usuarios
-
-El servidor verifica la validez del token JWT, lo decodifica para obtener el email del usuario, y devuelve los datos del usuario si está autenticado correctamente.
-
-Middleware y Seguridad
-
-    Verificación de Credenciales: El middleware checkCredentials verifica la existencia de credenciales en las rutas correspondientes.
+redenciales en las rutas correspondientes.
     Validación de Token: El middleware verifyToken valida el token recibido en las cabeceras.
     Registro de Consultas: El middleware morgan reporta las consultas recibidas en el servidor.
     Encriptación de Contraseñas: Las contraseñas se encriptan al momento de registrar nuevos usuarios utilizando bcrypt.
