@@ -29,9 +29,26 @@ Ruta: GET /api/usuarios
 
 El servidor verifica la validez del token JWT, lo decodifica para obtener el email del usuario, y devuelve los datos del usuario si está autenticado correctamente.
 
-Middleware y Seguridad
+**Middleware y Seguridad**
 
-    Verificación de Credenciales: El middleware checkCredentials verifica la existencia de c
+    - Verificación de Credenciales: El middleware checkCredentials verifica la existencia de credenciales en las rutas correspondientes.
+    - Validación de Token: El middleware verifyToken valida el token recibido en las cabeceras.
+    - Registro de Consultas: El middleware morgan reporta las consultas recibidas en el servidor.
+    - Encriptación de Contraseñas: Las contraseñas se encriptan al momento de registrar nuevos usuarios utilizando bcrypt.
+
+**Manejo de Errores**
+
+- El servidor captura y devuelve los posibles errores que ocurren durante el procesamiento de las solicitudes.
+
+**Correo guardado en la base de datos con cifrado**
+![imagen](https://github.com/NicoOrregoOlguin/Soft-Jobs-Backend-Authentication-Authorization/assets/113557666/297b294d-f86e-4fc2-b019-631aa7b7db25)
+
+**Petición POSTMAN para revisar el JWT**
+![imagen](https://github.com/NicoOrregoOlguin/Soft-Jobs-Backend-Authentication-Authorization/assets/113557666/9aea8bb7-3909-479d-9ad7-6013a3214fac)
+
+**Informacion almacenada en el JWT**
+![imagen](https://github.com/NicoOrregoOlguin/Soft-Jobs-Backend-Authentication-Authorization/assets/113557666/2f76a5fc-5c74-4758-ac91-97d6ea3edfcb)
+
 
 ## Tecnologías Utilizadas
 
