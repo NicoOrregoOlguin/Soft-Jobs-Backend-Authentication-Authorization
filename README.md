@@ -44,7 +44,8 @@ El servidor verifica la validez del token JWT, lo decodifica para obtener el ema
 ![imagen](https://github.com/NicoOrregoOlguin/Soft-Jobs-Backend-Authentication-Authorization/assets/113557666/297b294d-f86e-4fc2-b019-631aa7b7db25)
 
 **Petición POSTMAN para revisar el JWT**
-![imagen](https://github.com/NicoOrregoOlguin/Soft-Jobs-Backend-Authentication-Authorization/assets/113557666/9aea8bb7-3909-479d-9ad7-6013a3214fac)
+![imagen](https://github.com/NicoOrregoOlguin/Soft-Jobs-Backend-Authentication-Authorization/assets/113557666/f2264486-411a-471e-b6d1-da5567672507)
+
 
 **Informacion almacenada en el JWT**
 ![imagen](https://github.com/NicoOrregoOlguin/Soft-Jobs-Backend-Authentication-Authorization/assets/113557666/2f76a5fc-5c74-4758-ac91-97d6ea3edfcb)
@@ -75,8 +76,3 @@ CREATE TABLE usuarios (
   lenguage VARCHAR(20)
 );
 SELECT * FROM usuarios;
-
-redenciales en las rutas correspondientes.
-    Validación de Token: El middleware verifyToken valida el token recibido en las cabeceras.
-    Registro de Consultas: El middleware morgan reporta las consultas recibidas en el servidor.
-    Encriptación de Contraseñas: Las contraseñas se encriptan al momento de registrar nuevos usuarios utilizando bcrypt.
